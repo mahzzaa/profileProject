@@ -1,5 +1,7 @@
 <template>
-  <section class="background">
+  <section
+    class="h-screen xs:h-full bg-left-bottom bg-no-repeat bg-background-info bg-64 xs:bg-48 xs:bg-left-bottom bg-scroll xs:bg-opacity-0"
+  >
     <div class="">
       <div
         class="pt-20 container mx-auto flex flex-col items-center justify-center"
@@ -65,7 +67,6 @@
           </div>
           <div class="">
             <button
-              @click="toggleModal = !toggleModal"
               class="focus:bg-yellow-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:outline-none"
             >
               Change
@@ -73,14 +74,18 @@
 
             <div
               v-if="toggleModal"
-              class="absolute z-40 inset-0 opacity-25 bg-black"
+              class="h-screen fixed z-40 inset-0 opacity-25 bg-black"
             ></div>
             <div
               v-if="toggleModal"
               class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
             >
-              <div class="absolute mx-auto w-auto max-w-2xl flex flex-col jstify-center items-center">
-                <div class="bg-lime-50 w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md">
+              <div
+                class="absolute mx-auto w-auto max-w-2xl flex flex-col jstify-center items-center"
+              >
+                <div
+                  class="bg-lime-50 w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md"
+                >
                   <span
                     class="m-2 p-2 flex justify-center items-center font-medium text-gray-900"
                   >
@@ -88,7 +93,11 @@
                   </span>
                   <div class="flex flex-col justify-center items-center">
                     <div class="flex flex-col justify-start items-start">
-                      <label for="password1" class="text-xs text-gray-700 font-medium">Current Password</label>
+                      <label
+                        for="password1"
+                        class="text-xs text-gray-700 font-medium"
+                        >Current Password</label
+                      >
                       <input
                         id="password1"
                         class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
@@ -97,7 +106,11 @@
                       />
                     </div>
                     <div class="flex flex-col justify-start items-start">
-                      <label for="password1" class="text-xs text-gray-700 font-medium">New Password</label>
+                      <label
+                        for="password1"
+                        class="text-xs text-gray-700 font-medium"
+                        >New Password</label
+                      >
                       <input
                         id="password1"
                         class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
@@ -106,7 +119,11 @@
                       />
                     </div>
                     <div class="flex flex-col justify-start items-start">
-                      <label for="password1" class="text-xs text-gray-700 font-medium">Confirm New Password</label>
+                      <label
+                        for="password1"
+                        class="text-xs text-gray-700 font-medium"
+                        >Confirm New Password</label
+                      >
                       <input
                         id="password1"
                         class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
@@ -142,6 +159,7 @@
           </div>
 
           <button
+            @click="toggleModal = !toggleModal"
             class="uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:bg-red-light focus:outline-none"
           >
             Change
@@ -270,12 +288,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.background {
-  background-image: url("~assets/img/join.svg");
-  background-repeat: no-repeat;
-  background-size: 15%;
-  background-attachment: fixed;
-  background-position: bottom left;
-}
-</style>
+<style scoped></style>

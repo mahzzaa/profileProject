@@ -46,7 +46,7 @@
               </div>
 
               <button
-                class="focus:bg-green-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 update-btn hover:bg-gray-500"
+                class="focus:bg-green-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 update-btn hover:bg-gray-500 focus:outline-none"
               >
                 Update
               </button>
@@ -65,10 +65,73 @@
           </div>
           <div class="">
             <button
-              class="focus:bg-yellow-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600"
+              @click="toggleModal = !toggleModal"
+              class="focus:bg-yellow-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:outline-none"
             >
               Change
             </button>
+
+            <div
+              v-if="toggleModal"
+              class="absolute z-40 inset-0 opacity-25 bg-black"
+            ></div>
+            <div
+              v-if="toggleModal"
+              class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
+            >
+              <div class="absolute mx-auto w-auto max-w-2xl flex flex-col jstify-center items-center">
+                <div class="bg-lime-50 w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md">
+                  <span
+                    class="m-2 p-2 flex justify-center items-center font-medium text-gray-900"
+                  >
+                    Reset your password
+                  </span>
+                  <div class="flex flex-col justify-center items-center">
+                    <div class="flex flex-col justify-start items-start">
+                      <label for="password1" class="text-xs text-gray-700 font-medium">Current Password</label>
+                      <input
+                        id="password1"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
+                        type="text"
+                        placeholder="Enter your current password"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-start items-start">
+                      <label for="password1" class="text-xs text-gray-700 font-medium">New Password</label>
+                      <input
+                        id="password1"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
+                        type="text"
+                        placeholder="Enter your new password"
+                      />
+                    </div>
+                    <div class="flex flex-col justify-start items-start">
+                      <label for="password1" class="text-xs text-gray-700 font-medium">Confirm New Password</label>
+                      <input
+                        id="password1"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
+                        type="text"
+                        placeholder="Confirm new password"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-center items-center">
+                    <button
+                      class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      @click="toggleModal = false"
+                    >
+                      Close
+                    </button>
+                    <button
+                      class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      @click="toggleModal = false"
+                    >
+                      save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -76,15 +139,10 @@
         >
           <div class="flex flex-col">
             <p class="m-2 text-gray-700 font-medium">Password</p>
-            <input
-              type="password"
-              class="border-2 border-gray-400 rounded-md h-10 p-2 m-2"
-              placeholder="Enter your password"
-            />
           </div>
 
           <button
-            class="uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:bg-red-light"
+            class="uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:bg-red-light focus:outline-none"
           >
             Change
           </button>
@@ -186,12 +244,12 @@
           </div>
           <div class="p-2 m-3">
             <button
-              class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium"
+              class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none"
             >
               cancel
             </button>
             <button
-              class="px-10 py-2 bg-gray-500 text-gray-200 focus:bg-gray-700 focus:text-gray-200 hover:bg-gray-700 hover:text-gray-200 rounded-md font-medium"
+              class="px-10 py-2 bg-gray-500 text-gray-200 focus:bg-gray-700 focus:text-gray-200 hover:bg-gray-700 hover:text-gray-200 rounded-md font-medium focus:outline-none"
             >
               change
             </button>
@@ -201,6 +259,16 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      toggleModal: false
+    };
+  }
+};
+</script>
 
 <style scoped>
 .background {

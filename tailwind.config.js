@@ -10,7 +10,10 @@ module.exports = {
           'yellow-light' : '#fbff00',
           'red-light' : '#b80808',
           'amber-200':'#FDE68A',
-          'lime-500':'#84CC16'
+          'lime-500':'#84CC16',
+          'lime-100':'#ECFCCB',
+          'lime-50':'#F7FEE7',
+          'emerald-600':'#059669'
         }
       }
     }

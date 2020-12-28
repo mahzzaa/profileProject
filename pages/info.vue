@@ -84,12 +84,14 @@
                 class="absolute mx-auto w-auto max-w-2xl flex flex-col jstify-center items-center"
               >
                 <div
-                  class="bg-lime-50 w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md"
+                  class="bg-white w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md"
                 >
                   <span
                     class="m-2 p-2 flex justify-center items-center font-medium text-gray-900"
                   >
-                    Reset your password
+                    <p class="text-md text-gray-700">
+                      Reset your password
+                    </p>
                   </span>
                   <div class="flex flex-col justify-center items-center">
                     <div class="flex flex-col justify-start items-start">
@@ -100,8 +102,8 @@
                       >
                       <input
                         id="password1"
-                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
-                        type="text"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-gray-700 focus:placeholder-gray-400"
+                        type="password"
                         placeholder="Enter your current password"
                       />
                     </div>
@@ -113,8 +115,8 @@
                       >
                       <input
                         id="password1"
-                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
-                        type="text"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-gray-700 focus:placeholder-gray-400"
+                        type="password"
                         placeholder="Enter your new password"
                       />
                     </div>
@@ -126,21 +128,21 @@
                       >
                       <input
                         id="password1"
-                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-emerald-600 focus:placeholder-gray-400"
-                        type="text"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-gray-700 focus:placeholder-gray-400"
+                        type="password"
                         placeholder="Confirm new password"
                       />
                     </div>
                   </div>
                   <div class="flex justify-center items-center">
                     <button
-                      class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      class="px-6 py-2 m-2 text-gray-200 bg-green-500 focus:bg-green-400 focus:text-green-200 hover:bg-green-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
                       @click="toggleModal = false"
                     >
                       Close
                     </button>
                     <button
-                      class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      class="px-6 py-2 text-gray-200 bg-red-500 focus:bg-red-400 focus:text-gray-200 hover:bg-red-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
                       @click="toggleModal = false"
                     >
                       save

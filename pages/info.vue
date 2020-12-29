@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-screen xs:h-full bg-left-bottom bg-no-repeat bg-background-info bg-64 xs:bg-48 xs:bg-left-bottom bg-scroll xs:bg-opacity-0"
+    class="h-full xs:h-full bg-left-bottom bg-no-repeat bg-background-info bg-64 xs:bg-none xs:bg-48 xs:bg-left-bottom bg-scroll xs:bg-opacity-0 bg-fixed"
   >
     <div class="">
       <div
@@ -93,8 +93,6 @@
                       <img
                         src="~/assets/img/fingerprint.svg"
                         class="w-12 h-12"
-                        alt=""
-                        srcset=""
                       />
                       <p class="text-md text-gray-700">
                         Reset your password
@@ -178,12 +176,7 @@
                     class="p-2 flex justify-center items-center font-medium text-gray-900"
                   >
                     <div class="flex flex-col justify-center items-center">
-                      <img
-                        src="~/assets/img/gmail.svg"
-                        class="w-12 h-12"
-                        alt=""
-                        srcset=""
-                      />
+                      <img src="~/assets/img/gmail.svg" class="w-12 h-12" />
                       <p class="text-md text-gray-700">
                         Type your email adress
                       </p>
@@ -216,7 +209,138 @@
                 </div>
               </div>
             </div>
+            <div
+              v-if="toggleModal2"
+              class="h-screen fixed z-40 inset-0 opacity-25 bg-black"
+            ></div>
+            <div
+              v-if="toggleModal2"
+              class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
+            >
+              <div
+                class="absolute mx-auto w-auto max-w-2xl flex flex-col jstify-center items-center"
+              >
+                <div
+                  class="bg-white w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md"
+                >
+                  <span
+                    class="p-2 flex justify-center items-center font-medium text-gray-900"
+                  >
+                    <div class="flex flex-col justify-center items-center">
+                      <!-- <img src="~/assets/img/gmail.svg" class="w-12 h-12" /> -->
+                      <p class="text-md text-gray-700">
+                        Enter your social media link
+                      </p>
+                    </div>
+                  </span>
+                  <div class="flex flex-col justify-center items-center">
+                    <div class="flex flex-col justify-start items-start">
+                      <div class="">
+                        <div class="flex flex-col m-2">
+                          <div class="flex flex-row">
+                            <img
+                              src="~assets/img/telegram.svg"
+                              class="w-6 h-6"
+                              alt=""
+                            />
+                            <p class="flex justify-center text-gray-900 pl-3">
+                              telegram
+                            </p>
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="telegram"
+                            class="px-2 py-3 h-8 m-2 border-gray-200 border-2 rounded-md"
+                          />
+                        </div>
+                        <div class="flex flex-col m-2">
+                          <div class="flex flex-row">
+                            <img
+                              src="~assets/img/github.svg"
+                              class="w-6 h-6"
+                              alt=""
+                            />
+                            <p class="flex justify-center text-gray-900 pl-3">
+                              github
+                            </p>
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="telegram"
+                            class="px-2 py-3 h-8 m-2 border-gray-200 border-2 rounded-md"
+                          />
+                        </div>
+                        <div class="flex flex-col m-2">
+                          <div class="flex flex-row">
+                            <img
+                              src="~assets/img/instagram.svg"
+                              class="w-6 h-6"
+                              alt=""
+                            />
+                            <p class="flex justify-center text-gray-900 pl-3">
+                              instagram
+                            </p>
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="telegram"
+                            class="px-2 py-3 h-8 m-2 border-gray-200 border-2 rounded-md"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex justify-center items-center">
+                    <button
+                      class="px-6 py-2 m-2 text-gray-200 bg-lime-700 focus:bg-green-400 focus:text-green-200 hover:bg-green-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      @click="toggleModal2 = false"
+                    >
+                      save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div
+          class="flex flex-row w-3/4 flex flex-row xs:flex-col justify-between items-center border-b-2 border-gray-200 p-6"
+        >
+          <div class="">
+            <p class="m-2 text-gray-700 font-medium">
+              Enter your social media link
+            </p>
+            <div class="flex flex-col m-2">
+              <div class="flex flex-row">
+                <img src="~assets/img/telegram.svg" class="w-6 h-6" alt="" />
+                <p class="flex justify-center font-medium text-gray-900 pl-3">
+                  telegram
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col m-2">
+              <div class="flex flex-row">
+                <img src="~assets/img/github.svg" class="w-6 h-6" alt="" />
+                <p class="flex justify-center font-medium text-gray-900 pl-3">
+                  github
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col m-2">
+              <div class="flex flex-row">
+                <img src="~assets/img/instagram.svg" class="w-6 h-6" alt="" />
+                <p class="flex justify-center font-medium text-gray-900 pl-3">
+                  instagram
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            @click="toggleModal2 = !toggleModal2"
+            class="focus:bg-yellow-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:outline-none hover:shadow-md"
+          >
+            Change
+          </button>
         </div>
         <div
           class="flex flex-row w-3/4 flex flex-row xs:flex-col justify-between items-center border-b-2 border-gray-200 p-6"
@@ -350,7 +474,8 @@ export default {
   data() {
     return {
       toggleModal: false,
-      toggleModal1: false
+      toggleModal1: false,
+      toggleModal2: false
     };
   }
 };

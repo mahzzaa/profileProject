@@ -3,7 +3,7 @@
     class="flex fixed w-full items-center justify-between px-6 h-16 bg-gray-100 text-gray-700 border-b border-gray-200 z-10"
   >
     <div class="flex items-center">
-      <button class="mr-2" aria-label="Open Menu" @click="drawer">
+      <button class="mr-2 focus:outline-none" aria-label="Open Menu" @click="drawer">
         <img class="h-10 w-10" src="~/assets/img/gear.svg" />
       </button>
       <div class="bg-clip-text text-gray-700">
@@ -47,7 +47,7 @@
     >
       <button
         @click="isOpen = false"
-        class="flex items-center w-full mt-3 mb-2 p-4 text-gray-500 font-medium hover:bg-gray-500 hover:text-white "
+        class="flex items-center w-full mt-3 mb-2 p-4 text-gray-500 font-medium hover:bg-gray-500 hover:text-white focus:outline-none"
       >
         <button class="mr-2">
           <img class="h-8 w-8" src="~/assets/img/home.svg" alt="" srcset="" />
@@ -56,22 +56,22 @@
       </button>
       <nuxt-link to="/info"
         @click="isOpen = false"
-        class="flex items-center w-full mt-3 mb-2 text-gray-500 font-medium p-4 hover:bg-gray-500 hover:text-white ">
+        class="flex items-center w-full mt-3 mb-2 text-gray-500 font-medium p-4 hover:bg-gray-500 hover:text-white focus:outline-none">
           <img class="h-8 w-8" src="~/assets/img/boy.svg" alt="" srcset="" />
         Info</nuxt-link>
         <nuxt-link to="/skills"
         @click="isOpen = false"
-        class="flex items-center w-full mt-3 mb-2 text-gray-500 font-medium p-4 hover:bg-gray-500 hover:text-white ">
+        class="flex items-center w-full mt-3 mb-2 text-gray-500 font-medium p-4 hover:bg-gray-500 hover:text-white focus:outline-none">
           <img class="h-8 w-8" src="~/assets/img/user.svg" alt="" srcset="" />
         Personal Skills</nuxt-link>
         <nuxt-link to="/champions"
         @click="isOpen = false"
-        class="flex items-center w-full mt-3 mb-2 text-gray-500 font-medium p-4 hover:bg-gray-500 hover:text-white ">
+        class="flex items-center w-full mt-3 mb-2 text-gray-500 font-medium p-4 hover:bg-gray-500 hover:text-white focus:outline-none">
           <img class="h-8 w-8" src="~/assets/img/trophy.svg" alt="" srcset="" />
         Champions</nuxt-link>
         <div class="fixed bottom-0 w-full">
         <button
-          class="flex items-center p-4 text-white bg-gray-500 w-full"
+          class="flex items-center p-4 text-white bg-gray-500 w-full focus:outline-none hover:bg-gray-400"
         >
           <img class="h-8 w-8" src="~/assets/img/color-wheel.svg" alt="" srcset="" />
           <p class="text-gray-200 font-medium p-4 ">Theme</p>

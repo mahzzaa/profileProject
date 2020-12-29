@@ -48,7 +48,7 @@
               </div>
 
               <button
-                class="focus:bg-green-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 update-btn hover:bg-gray-500 focus:outline-none"
+                class="focus:bg-green-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 update-btn hover:bg-gray-500 focus:outline-none hover:shadow-md"
               >
                 Update
               </button>
@@ -67,7 +67,8 @@
           </div>
           <div class="">
             <button
-              class="focus:bg-yellow-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:outline-none"
+              @click="toggleModal1 = !toggleModal1"
+              class="focus:bg-yellow-light uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:outline-none hover:shadow-md"
             >
               Change
             </button>
@@ -88,10 +89,17 @@
                 >
                   <span
                     class="m-2 p-2 flex justify-center items-center font-medium text-gray-900"
-                  >
-                    <p class="text-md text-gray-700">
-                      Reset your password
-                    </p>
+                    ><div class="flex flex-col justify-center items-center">
+                      <img
+                        src="~/assets/img/fingerprint.svg"
+                        class="w-12 h-12"
+                        alt=""
+                        srcset=""
+                      />
+                      <p class="text-md text-gray-700">
+                        Reset your password
+                      </p>
+                    </div>
                   </span>
                   <div class="flex flex-col justify-center items-center">
                     <div class="flex flex-col justify-start items-start">
@@ -136,14 +144,71 @@
                   </div>
                   <div class="flex justify-center items-center">
                     <button
-                      class="px-6 py-2 m-2 text-gray-200 bg-green-500 focus:bg-green-400 focus:text-green-200 hover:bg-green-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      class="px-6 py-2 m-2 text-gray-200 bg-lime-700 focus:bg-green-400 focus:text-green-200 hover:bg-green-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
                       @click="toggleModal = false"
                     >
                       Close
                     </button>
                     <button
-                      class="px-6 py-2 text-gray-200 bg-red-500 focus:bg-red-400 focus:text-gray-200 hover:bg-red-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      class="px-6 py-2 text-gray-200 bg-red-50 focus:bg-red-400 focus:text-gray-200 hover:bg-red-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
                       @click="toggleModal = false"
+                    >
+                      save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              v-if="toggleModal1"
+              class="h-screen fixed z-40 inset-0 opacity-25 bg-black"
+            ></div>
+            <div
+              v-if="toggleModal1"
+              class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
+            >
+              <div
+                class="absolute mx-auto w-auto max-w-2xl flex flex-col jstify-center items-center"
+              >
+                <div
+                  class="bg-white w-full flex flex-col p-5 m-5 flex justify-center items-center shadow-lg rounded-md"
+                >
+                  <span
+                    class="p-2 flex justify-center items-center font-medium text-gray-900"
+                  >
+                    <div class="flex flex-col justify-center items-center">
+                      <img
+                        src="~/assets/img/gmail.svg"
+                        class="w-12 h-12"
+                        alt=""
+                        srcset=""
+                      />
+                      <p class="text-md text-gray-700">
+                        Type your email adress
+                      </p>
+                    </div>
+                  </span>
+                  <div class="flex flex-col justify-center items-center">
+                    <div class="flex flex-col justify-start items-start">
+                      <input
+                        id="password1"
+                        class="border-2 w-64 xs:w-52 h-6 m-2 p-5 rounded-md focus:outline-none placeholder-opacity-50 placeholder-gray-700 focus:placeholder-gray-400"
+                        type="password"
+                        placeholder="Enter your current password"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-center items-center">
+                    <button
+                      class="px-6 py-2 m-2 text-gray-200 bg-lime-700 focus:bg-green-400 focus:text-green-200 hover:bg-green-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      @click="toggleModal1 = false"
+                    >
+                      Close
+                    </button>
+                    <button
+                      class="px-6 py-2 text-gray-200 bg-red-50 focus:bg-red-400 focus:text-gray-200 hover:bg-red-400 hover:text-gray-200 rounded-md font-medium focus:outline-none flex justify-center items-center w-20"
+                      @click="toggleModal1 = false"
                     >
                       save
                     </button>
@@ -162,7 +227,7 @@
 
           <button
             @click="toggleModal = !toggleModal"
-            class="uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:bg-red-light focus:outline-none"
+            class="uppercase bg-gray-400 m-2 px-2 py-2 w-28 rounded-md tracker-tighter font-medium text-gray-100 hover:bg-gray-600 focus:bg-red-50 focus:outline-none hover:shadow-md"
           >
             Change
           </button>
@@ -264,12 +329,12 @@
           </div>
           <div class="p-2 m-3">
             <button
-              class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none"
+              class="px-6 py-2 text-gray-700 focus:bg-gray-400 focus:text-gray-200 hover:bg-gray-500 hover:text-gray-200 rounded-md font-medium focus:outline-none hover:shadow-md"
             >
               cancel
             </button>
             <button
-              class="px-10 py-2 bg-gray-500 text-gray-200 focus:bg-gray-700 focus:text-gray-200 hover:bg-gray-700 hover:text-gray-200 rounded-md font-medium focus:outline-none"
+              class="px-10 py-2 bg-gray-500 text-gray-200 focus:bg-gray-700 focus:text-gray-200 hover:bg-gray-700 hover:text-gray-200 rounded-md font-medium focus:outline-none hover:shadow-md"
             >
               change
             </button>
@@ -284,7 +349,8 @@
 export default {
   data() {
     return {
-      toggleModal: false
+      toggleModal: false,
+      toggleModal1: false
     };
   }
 };
